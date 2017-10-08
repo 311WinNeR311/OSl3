@@ -1,0 +1,8 @@
+$Recycle.Bin
+Blade and Soul
+Documents and Settings
+Intel
+logs
+oem
+PerfLogs
+Portable

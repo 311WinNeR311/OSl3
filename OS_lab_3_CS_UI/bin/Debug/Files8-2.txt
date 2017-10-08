@@ -1,0 +1,2 @@
+Oracle VM VirtualBox.lnk
+pagefile.sys

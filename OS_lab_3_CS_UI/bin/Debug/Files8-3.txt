@@ -1,0 +1,2 @@
+swapfile.sys
+TeamViewer 12.lnk

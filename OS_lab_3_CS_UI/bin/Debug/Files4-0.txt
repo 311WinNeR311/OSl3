@@ -1,0 +1,4 @@
+CPUID HWMonitor.lnk
+GitHub Desktop.lnk
+hiberfil.sys
+LibreOffice 5.4.lnk

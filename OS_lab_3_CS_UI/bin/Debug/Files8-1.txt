@@ -1,0 +1,2 @@
+hiberfil.sys
+LibreOffice 5.4.lnk

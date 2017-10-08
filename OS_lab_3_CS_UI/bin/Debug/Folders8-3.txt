@@ -1,0 +1,5 @@
+SQLServer2016Media
+System Volume Information
+temp
+Users
+Windows
