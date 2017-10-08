@@ -148,64 +148,6 @@ namespace OS_lab_3_CS_UI
             return SearchedFolders;
         }
 
-        // Function to print result of searching
-        private void PrintResults(int iCountOfThreads)
-        {
-            richTextBox1.Clear();
-            richTextBox1.Text += "Folders:\n";
-            bool isExist = false;
-            for (int i = 0; i < iCountOfThreads; ++i)
-            {
-                string sFilesName = "Folders";
-                sFilesName += comboBox1.SelectedItem.ToString() + "-";
-                sFilesName += i.ToString() + ".txt";
-                if (File.Exists(sFilesName))
-                {
-                    if (!isExist)
-                    {
-                        isExist = true;
-                    }
-                    StreamReader sr = new StreamReader(sFilesName);
-                    string line = sr.ReadLine();
-
-                    //Continue to read until you reach end of file
-                    while (line != null)
-                    {
-                        richTextBox1.Text += line + '\n';
-                        line = sr.ReadLine();
-                    }
-                }
-            }
-
-            richTextBox1.Text += "\nFiles:\n";
-            for (int i = 0; i < iCountOfThreads; ++i)
-            {
-                string sFilesName = "Files";
-                sFilesName += comboBox1.SelectedItem.ToString() + "-";
-                sFilesName += i.ToString() + ".txt";
-                if (File.Exists(sFilesName))
-                {
-                    if (!isExist)
-                    {
-                        isExist = true;
-                    }
-                    StreamReader sr = new StreamReader(sFilesName);
-                    string line = sr.ReadLine();
-
-                    //Continue to read until you reach end of file
-                    while (line != null)
-                    {
-                        richTextBox1.Text += line + '\n';
-                        line = sr.ReadLine();
-                    }
-                }
-            }
-            if (!isExist)
-            {
-                MessageBox.Show("Please, firstly start searching by " + iCountOfThreads * 2 + " threads");
-            }
-        }
-
 
         
 
@@ -318,15 +260,68 @@ namespace OS_lab_3_CS_UI
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Thread t = new Thread(() => PrintResults(int.Parse(comboBox1.SelectedItem.ToString()) / 2));
-            t.Start();
+            int iCountOfThreads = int.Parse(comboBox1.SelectedItem.ToString()) / 2;
+
+            richTextBox1.Clear();
+            richTextBox1.Text += "Folders:\n";
+            bool isExist = false;
+            for (int i = 0; i < iCountOfThreads; ++i)
+            {
+                string sFilesName = "Folders";
+                sFilesName += comboBox1.SelectedItem.ToString() + "-";
+                sFilesName += i.ToString() + ".txt";
+                if (File.Exists(sFilesName))
+                {
+                    if (!isExist)
+                    {
+                        isExist = true;
+                    }
+                    StreamReader sr = new StreamReader(sFilesName);
+                    string line = sr.ReadLine();
+
+                    //Continue to read until you reach end of file
+                    while (line != null)
+                    {
+                        richTextBox1.Text += line + '\n';
+                        line = sr.ReadLine();
+                    }
+                }
+            }
+
+            richTextBox1.Text += "\nFiles:\n";
+            for (int i = 0; i < iCountOfThreads; ++i)
+            {
+                string sFilesName = "Files";
+                sFilesName += comboBox1.SelectedItem.ToString() + "-";
+                sFilesName += i.ToString() + ".txt";
+                if (File.Exists(sFilesName))
+                {
+                    if (!isExist)
+                    {
+                        isExist = true;
+                    }
+                    StreamReader sr = new StreamReader(sFilesName);
+                    string line = sr.ReadLine();
+
+                    //Continue to read until you reach end of file
+                    while (line != null)
+                    {
+                        richTextBox1.Text += line + '\n';
+                        line = sr.ReadLine();
+                    }
+                }
+            }
+            if (!isExist)
+            {
+                MessageBox.Show("Please, firstly start searching by " + iCountOfThreads * 2 + " threads");
+            }
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
             int iThread = int.Parse(comboBox2.SelectedItem.ToString()) - 1;
             int iPriority = comboBox3.SelectedIndex;
-            if (T.Count == 0)
+            if (T.Count <= iThread)
             {
                 MessageBox.Show("Firstly, start threading");
                 return;

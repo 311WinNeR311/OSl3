@@ -131,6 +131,8 @@ namespace OS_lab_3_CS_UI
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 24);
             this.comboBox1.TabIndex = 10;
+
+            this.comboBox1.SelectedIndex = 0;
             // 
             // button3
             // 
@@ -188,6 +190,7 @@ namespace OS_lab_3_CS_UI
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(109, 24);
             this.comboBox2.TabIndex = 14;
+            this.comboBox2.SelectedIndex = 0;
             // 
             // comboBox3
             // 
@@ -203,6 +206,7 @@ namespace OS_lab_3_CS_UI
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(150, 24);
             this.comboBox3.TabIndex = 15;
+            this.comboBox3.SelectedIndex = 2;
             // 
             // button4
             // 
