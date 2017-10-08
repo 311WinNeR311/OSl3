@@ -1,4 +1,7 @@
-﻿namespace OS_lab_3_CS_UI
+﻿using System.Collections.Generic;
+using System.Threading;
+
+namespace OS_lab_3_CS_UI
 {
     partial class Form1
     {
@@ -45,6 +48,7 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+
             // 
             // textBox1
             // 
@@ -256,6 +260,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button4;
+
     }
 }
 

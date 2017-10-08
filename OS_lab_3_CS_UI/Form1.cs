@@ -14,9 +14,9 @@ namespace OS_lab_3_CS_UI
         }
 
         private string[] files = Directory.GetFiles(@"C:\");
-        private string[] folders = Directory.GetDirectories(@"C:\");    
-        
+        private string[] folders = Directory.GetDirectories(@"C:\");
 
+        List<Thread> T = new List<Thread>();
 
         /*
          Functions
@@ -207,7 +207,7 @@ namespace OS_lab_3_CS_UI
         }
 
 
-        List<Thread> T = new List<Thread>();
+        
 
         private void Button1_Click(object sender, System.EventArgs e)
         {
@@ -326,6 +326,16 @@ namespace OS_lab_3_CS_UI
         {
             int iThread = int.Parse(comboBox2.SelectedItem.ToString()) - 1;
             int iPriority = comboBox3.SelectedIndex;
+            if (T.Count == 0)
+            {
+                MessageBox.Show("Firstly, start threading");
+                return;
+            }
+            if (!T[iThread].IsAlive)
+            {
+                MessageBox.Show("Thread is ended working, use this option when threading is in process");
+                return;
+            }
             switch (iPriority)
             {
                 case 0:
